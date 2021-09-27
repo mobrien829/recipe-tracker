@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css'
-import RecipeCard from './components/RecipeCard'
+import RecipeGrid from './containers/RecipeGrid'
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
           <p>Recipe-holder app (placeholder name)</p>
       </header>
       <div id="body-container">
-        <RecipeCard />
+        <RecipeGrid />
       </div>
     </div>
   );

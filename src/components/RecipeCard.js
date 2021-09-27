@@ -12,7 +12,7 @@ function RecipeCard() {
     <Card>
         <Card.Content href=''>
         example card for first recipe
-        <Card.Header className="recipe-title">Chicken parm</Card.Header>
+        <Card.Header className="recipeTitle">Chicken parm</Card.Header>
         <Card.Description className="author">Peyton Manning</Card.Description>
         </Card.Content>
     </Card>)
