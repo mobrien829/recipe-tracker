@@ -9,9 +9,9 @@ import { BrowserRouter as Router } from "react-router-dom"
 ReactDOM.render(
   <React.StrictMode>
     <UserContextProvider>
-      <BrowserRouter>
+      <Router>
         <App />
-      </BrowserRouter>
+      </Router>
     </UserContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
