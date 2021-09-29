@@ -9,7 +9,7 @@ import { Card } from "semantic-ui-react"
 
 class RecipeCard extends Component {
 
-    handleRecipeClick = (props) => {
+    handleRecipeClick = () => {
         this.props.history.push(`/recipes`)
         console.log("clicked")
     }
