@@ -5,3 +5,5 @@ const RecipePage = () => {
     console.log("recipe  page rendering")
     return null
 }
+
+export default RecipePage
