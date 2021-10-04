@@ -1,10 +1,10 @@
 import React from "react"
-import { Menu } from "semantic-ui-react"
-import { Link, useHistory } from "react-router-dom"
+import { Dropdown, Menu } from "semantic-ui-react"
+import { useHistory } from "react-router-dom"
 // TODO: submenus for content to display on main page?
 // create the pages that need to be linked to
 // ROUTING
-// create dropdown for right side menu - may need to figure out a way to pass down router props
+// logout is placeholder for the moment - need to connect to auth
 
 const NavBar = () => {
     let history = useHistory()
@@ -21,7 +21,14 @@ const NavBar = () => {
     <Menu>
     <Menu.Item onClick={homeHelper}>recipe-holder</Menu.Item>
     <Menu.Item>search bar</Menu.Item>
-    <Menu.Item position="right"  onClick={userHelper}>user profile</Menu.Item>
+    <Menu.Menu position="right">
+        <Dropdown item text="Account">
+            <Dropdown.Menu>
+                <Dropdown.Item onClick={userHelper}>Profile</Dropdown.Item>
+                <Dropdown.Item>Log Out</Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
+    </Menu.Menu>
     </Menu>)
 }
 
