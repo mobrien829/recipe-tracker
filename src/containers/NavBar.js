@@ -9,10 +9,12 @@ import { useHistory } from "react-router-dom"
 const NavBar = () => {
     let history = useHistory()
 
+    // returns to home page
     const homeHelper = () => {
         history.push("/")
     }
     
+    // causes user page to render
     const userHelper = () => {
         history.push("/user")
     }
