@@ -3,6 +3,7 @@ import './App.css';
 import 'semantic-ui-css/semantic.min.css'
 import RecipeGrid from './containers/RecipeGrid'
 import NavBar from './containers/NavBar'
+import UserPage from "./components/UserPage"
 import { Route } from "react-router-dom"
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/"
         render={routerProps => <RecipeGrid {...routerProps}/>}
        />
+       <Route path ="/user" render={routerProps => <UserPage {...routerProps}/>} />
       </div>
     </div>
   );
