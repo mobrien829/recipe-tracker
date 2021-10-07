@@ -4,13 +4,15 @@ import { Container } from "semantic-ui-react"
 // TODO: recipe list mapping or scrollable?
 // create backend seeding and start pulling info from backend rather than hardcode
 
-const UserPage = () => {
+const UserPage = (props) => {
+
+
     console.log("user page rendering")
     return (
         <>
-        <Container className="userName">Peyton Manning</Container>
-        <Container className="about">About</Container>
-        <Container className="recipeList">My Recipes</Container>
+        <Container className="userName">{props.name}</Container>
+        <Container className="about">{props.about}</Container>
+        <Container className="recipeList">recipes</Container>
         </>
     )
 }
