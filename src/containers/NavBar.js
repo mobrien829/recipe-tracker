@@ -1,6 +1,7 @@
 import React from "react"
 import { Dropdown, Menu } from "semantic-ui-react"
 import { useHistory } from "react-router-dom"
+import Login from "../components/Login"
 // TODO: submenus for content to display on main page?
 // create the pages that need to be linked to
 // ROUTING
@@ -19,6 +20,15 @@ const NavBar = () => {
         history.push("/user")
     }
 
+    const loginHelper = () => {
+        // history.push("/login")
+        console.log("login clicked")
+    }
+
+    const logoutHelper = () => {
+        console.log("logout clicked")
+    }
+
     return(
     <Menu>
     <Menu.Item onClick={homeHelper}>recipe-holder</Menu.Item>
@@ -27,7 +37,8 @@ const NavBar = () => {
         <Dropdown item text="Account">
             <Dropdown.Menu>
                 <Dropdown.Item onClick={userHelper}>Profile</Dropdown.Item>
-                <Dropdown.Item>Log Out</Dropdown.Item>
+                <Dropdown.Item onClick={loginHelper}>Log In</Dropdown.Item>
+                <Dropdown.Item onClick={logoutHelper}>Log Out</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     </Menu.Menu>
