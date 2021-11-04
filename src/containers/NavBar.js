@@ -1,13 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Dropdown, Menu } from "semantic-ui-react"
 import { useHistory } from "react-router-dom"
 import Login from "../components/Login"
+import { UserContext } from "../contexts/user-context"
 // TODO: submenus for content to display on main page?
 // create the pages that need to be linked to
 // ROUTING
 // logout is placeholder for the moment - need to connect to auth
 
 const NavBar = () => {
+
+    const [user, setUser] = useContext(UserContext)
+
     let history = useHistory()
 
     // returns to home page
@@ -29,6 +33,19 @@ const NavBar = () => {
         console.log("logout clicked")
     }
 
+     // selectively renders based on logged in/lout
+     const navBarMenu = () => {
+        // use ternary here
+        // return(
+            <>
+            <Dropdown.Item onClick={userHelper}>Profile</Dropdown.Item>
+                <Dropdown.Item onClick={logoutHelper}>Log Out</Dropdown.Item>
+                <Dropdown.Item onClick={loginHelper}>Log In</Dropdown.Item>
+                </>
+        // )
+    }
+
+
     return(
     <Menu>
     <Menu.Item onClick={homeHelper}>recipe-holder</Menu.Item>
@@ -36,10 +53,11 @@ const NavBar = () => {
     <Menu.Menu position="right">
         <Dropdown item text="Account">
             <Dropdown.Menu>
-                <Dropdown.Item onClick={userHelper}>Profile</Dropdown.Item>
-                <Dropdown.Item onClick={loginHelper}>Log In</Dropdown.Item>
+                {/* <Dropdown.Item onClick={userHelper}>Profile</Dropdown.Item>
                 <Dropdown.Item onClick={logoutHelper}>Log Out</Dropdown.Item>
-            </Dropdown.Menu>
+                <Dropdown.Item onClick={loginHelper}>Log In</Dropdown.Item> */}
+                {navBarMenu}
+                </Dropdown.Menu>
         </Dropdown>
     </Menu.Menu>
     </Menu>)
