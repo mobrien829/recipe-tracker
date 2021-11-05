@@ -36,13 +36,13 @@ const NavBar = () => {
      // selectively renders based on logged in/lout
      const navBarMenu = () => {
         // use ternary here
-        // return(
+        return(
             <>
-            <Dropdown.Item onClick={userHelper}>Profile</Dropdown.Item>
+                <Dropdown.Item onClick={userHelper}>Profile</Dropdown.Item>
                 <Dropdown.Item onClick={logoutHelper}>Log Out</Dropdown.Item>
                 <Dropdown.Item onClick={loginHelper}>Log In</Dropdown.Item>
-                </>
-        // )
+            </>
+        )
     }
 
 
@@ -53,11 +53,8 @@ const NavBar = () => {
     <Menu.Menu position="right">
         <Dropdown item text="Account">
             <Dropdown.Menu>
-                {/* <Dropdown.Item onClick={userHelper}>Profile</Dropdown.Item>
-                <Dropdown.Item onClick={logoutHelper}>Log Out</Dropdown.Item>
-                <Dropdown.Item onClick={loginHelper}>Log In</Dropdown.Item> */}
-                {navBarMenu}
-                </Dropdown.Menu>
+                {navBarMenu()}
+            </Dropdown.Menu>
         </Dropdown>
     </Menu.Menu>
     </Menu>)
