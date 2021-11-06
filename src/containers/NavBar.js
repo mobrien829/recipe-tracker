@@ -25,7 +25,7 @@ const NavBar = () => {
     }
 
     const loginHelper = () => {
-        // history.push("/login")
+        history.push("/login")
         console.log("login clicked")
     }
 
