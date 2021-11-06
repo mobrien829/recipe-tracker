@@ -33,16 +33,21 @@ const NavBar = () => {
         console.log("logout clicked")
     }
 
-     // selectively renders based on logged in/lout
+     // selectively renders based on logged in/lout TODO: refactor into its own component
      const navBarMenu = () => {
-        // use ternary here
-        return(
+         return (<>
+        {user ? 
+        (
             <>
                 <Dropdown.Item onClick={userHelper}>Profile</Dropdown.Item>
                 <Dropdown.Item onClick={logoutHelper}>Log Out</Dropdown.Item>
+            </>
+        ) :
+            (
+            <>
                 <Dropdown.Item onClick={loginHelper}>Log In</Dropdown.Item>
             </>
-        )
+            )}</>)
     }
 
 
