@@ -5,6 +5,7 @@ import RecipeGrid from './containers/RecipeGrid'
 import NavBar from './containers/NavBar'
 import UserPage from "./components/UserPage"
 import { Route } from "react-router-dom"
+import Login from "./components/Login"
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         render={routerProps => <RecipeGrid {...routerProps}/>}
        />
        <Route path ="/user" render={routerProps => <UserPage {...routerProps}/>} />
+       <Route path="/login" render={routerProps => <Login {...routerProps}/>}/> 
       </div>
     </div>
   );
